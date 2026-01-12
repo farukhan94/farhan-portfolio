@@ -9,7 +9,7 @@ on:
 env:
   PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
   REGION: us-central1 # TODO: Change this if your region is different
-  REPO_NAME: portfolio # TODO: Change this to your Artifact Registry repo name
+  REPO_NAME: farhan-portfolio # TODO: Change this to your Artifact Registry repo name
   SERVICE_NAME: farhan-portfolio
   IMAGE_TAG: ${{ github.sha }}
 
