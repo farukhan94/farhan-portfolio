@@ -5,9 +5,9 @@ import { TechIcon } from '../utils/techIcons';
 import { TECH_STACK } from '../constants';
 
 const Hero: React.FC = () => {
-  const firstName = "FARHAN";
+  const firstName = "1FARHAN";
   const lastName = "KHAN";
-  
+
   // 0: trying jpeg, 1: trying jpg, 2: initials fallback
   const [imgState, setImgState] = useState(0);
 
@@ -21,10 +21,10 @@ const Hero: React.FC = () => {
 
   const letter: Variants = {
     hidden: { y: 100, opacity: 0 },
-    visible: { 
-      y: 0, 
-      opacity: 1, 
-      transition: { type: "spring" as const, damping: 10, stiffness: 100 } 
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { type: "spring" as const, damping: 10, stiffness: 100 }
     }
   };
 
@@ -42,7 +42,7 @@ const Hero: React.FC = () => {
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden pt-20">
       {/* Enhanced Background with Multiple Gradient Orbs */}
       <div className="absolute inset-0 overflow-hidden">
-        <motion.div 
+        <motion.div
           animate={{
             x: [0, 100, 0],
             y: [0, 50, 0],
@@ -54,7 +54,7 @@ const Hero: React.FC = () => {
           }}
           className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-indigo-500/20 blur-[120px] rounded-full"
         ></motion.div>
-        <motion.div 
+        <motion.div
           animate={{
             x: [0, -80, 0],
             y: [0, 80, 0],
@@ -67,7 +67,7 @@ const Hero: React.FC = () => {
           }}
           className="absolute top-1/2 right-1/4 w-[500px] h-[500px] bg-purple-500/20 blur-[100px] rounded-full"
         ></motion.div>
-        <motion.div 
+        <motion.div
           animate={{
             x: [0, 60, 0],
             y: [0, -60, 0],
@@ -83,10 +83,10 @@ const Hero: React.FC = () => {
         {/* Subtle grid pattern overlay */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
       </div>
-      
+
       <div className="container mx-auto px-6 relative z-10 flex flex-col md:flex-row items-center md:items-center gap-8 md:gap-12 lg:gap-16 py-12 pb-16 md:pb-12">
         {/* Profile Image Section - Left Side */}
-        <motion.div 
+        <motion.div
           initial={{ scale: 0, opacity: 0, x: -50 }}
           animate={{ scale: 1, opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "backOut" }}
@@ -99,8 +99,8 @@ const Hero: React.FC = () => {
                   FK
                 </div>
               ) : (
-                <img 
-                  src={currentImgSrc} 
+                <img
+                  src={currentImgSrc}
                   alt="Mohammad Farhan Khan"
                   className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110"
                   onError={handleImageError}
@@ -124,7 +124,7 @@ const Hero: React.FC = () => {
           </div>
 
           {/* Name Popup Animation */}
-          <motion.div 
+          <motion.div
             className="flex flex-wrap justify-center md:justify-start gap-x-4 md:gap-x-6 mb-6 md:mb-8"
             variants={container}
             initial="hidden"
@@ -132,8 +132,8 @@ const Hero: React.FC = () => {
           >
             <div className="flex">
               {firstName.split("").map((char, i) => (
-                <motion.span 
-                  key={i} 
+                <motion.span
+                  key={i}
                   variants={letter}
                   className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-black tracking-tighter text-white hover:text-indigo-500 transition-colors cursor-default"
                 >
@@ -143,8 +143,8 @@ const Hero: React.FC = () => {
             </div>
             <div className="flex">
               {lastName.split("").map((char, i) => (
-                <motion.span 
-                  key={i} 
+                <motion.span
+                  key={i}
                   variants={letter}
                   className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-black tracking-tighter text-gradient hover:scale-110 transition-transform cursor-default"
                 >
@@ -153,39 +153,39 @@ const Hero: React.FC = () => {
               ))}
             </div>
           </motion.div>
-          
-          <motion.p 
+
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.5, duration: 1 }}
             className="max-w-2xl text-lg md:text-xl lg:text-2xl text-gray-400 mb-8 md:mb-10 leading-relaxed"
           >
-            Architecting resilient solutions for <span className="text-white font-bold">10M+ daily requests</span>. 
-            Expertise in <span className="text-indigo-400">Angular</span>, <span className="text-purple-400">Laravel</span>, 
+            Architecting resilient solutions for <span className="text-white font-bold">10M+ daily requests</span>.
+            Expertise in <span className="text-indigo-400">Angular</span>, <span className="text-purple-400">Laravel</span>,
             & <span className="text-rose-400">AWS</span>.
           </motion.p>
-          
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 2 }}
             className="flex flex-col sm:flex-row items-center gap-6 w-full md:w-auto"
           >
-            <a 
-              href="#projects" 
+            <a
+              href="#projects"
               className="px-10 py-5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-2xl font-bold transition-all transform hover:scale-105 shadow-2xl shadow-indigo-600/40 flex items-center gap-2"
             >
               <i className="fa-solid fa-folder-open"></i>
               Explore Projects
             </a>
-            <a 
-              href="#contact" 
+            <a
+              href="#contact"
               className="px-10 py-5 glass text-white rounded-2xl font-bold transition-all hover:bg-white/10 border border-white/10 flex items-center gap-2"
             >
               <i className="fa-solid fa-envelope"></i>
               Contact Me
             </a>
-            <a 
+            <a
               href="assets/farhan-khan-resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
@@ -200,7 +200,7 @@ const Hero: React.FC = () => {
 
       {/* Animated Tech Stack Marquee - Full Width */}
       <div className="container mx-auto px-6 relative z-10 mt-12 md:mt-16 hidden md:block">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 2.3, duration: 0.8 }}
@@ -211,7 +211,7 @@ const Hero: React.FC = () => {
             <span className="text-xs font-semibold text-gray-500 uppercase tracking-widest whitespace-nowrap">Tech Stack</span>
             <div className="flex-1 h-px bg-gradient-to-r from-indigo-500/50 via-purple-500/30 to-transparent"></div>
           </div>
-          
+
           <div className="relative overflow-hidden">
             <div className="flex animate-scroll-left">
               {[...Array(2)].map((_, setIndex) => (
