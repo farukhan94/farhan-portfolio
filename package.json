@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build:ssg": "vite build --ssr src/entry-server.tsx && vite build --outDir dist/client && node prerender.js",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -19,6 +20,7 @@
   "devDependencies": {
     "@types/node": "^22.14.0",
     "@vitejs/plugin-react": "^5.0.0",
+    "cross-env": "^7.0.3",
     "typescript": "~5.8.2",
     "vite": "^6.2.0"
   }

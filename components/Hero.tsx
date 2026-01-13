@@ -8,7 +8,7 @@ const Hero: React.FC = () => {
   const firstName = "1FARHAN";
   const lastName = "KHAN";
 
-  // 0: trying jpeg, 1: trying jpg, 2: initials fallback
+  // 0: trying webp, 1: trying jpg
   const [imgState, setImgState] = useState(0);
 
   const container: Variants = {
@@ -31,12 +31,10 @@ const Hero: React.FC = () => {
   const handleImageError = () => {
     if (imgState < 1) {
       setImgState(1); // Try .jpg
-    } else {
-      setImgState(2); // Fallback to initials
     }
   };
 
-  const currentImgSrc = imgState === 0 ? "/assets/farhan-khan.jpeg" : "/assets/farhan-khan.jpg";
+  const currentImgSrc = imgState === 0 ? "/assets/farhan-khan.webp" : "/assets/farhan-khan.jpg";
 
   return (
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden pt-20">
@@ -94,18 +92,12 @@ const Hero: React.FC = () => {
         >
           <div className="avatar-border">
             <div className="w-48 h-48 md:w-64 md:h-64 lg:w-72 lg:h-72 rounded-full overflow-hidden border-[6px] md:border-[8px] border-[#030712] relative group bg-gray-900 flex items-center justify-center shadow-2xl shadow-indigo-500/20">
-              {imgState === 2 ? (
-                <div className="w-full h-full flex items-center justify-center text-indigo-400 text-6xl md:text-7xl lg:text-8xl font-black bg-gray-800 tracking-tighter">
-                  FK
-                </div>
-              ) : (
-                <img
-                  src={currentImgSrc}
-                  alt="Mohammad Farhan Khan"
-                  className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110"
-                  onError={handleImageError}
-                />
-              )}
+              <img
+                src={currentImgSrc}
+                alt="Mohammad Farhan Khan"
+                className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110"
+                onError={handleImageError}
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-indigo-500/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
             </div>
           </div>

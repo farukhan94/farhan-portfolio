@@ -17,13 +17,13 @@ ARG GEMINI_API_KEY
 ENV GEMINI_API_KEY=$GEMINI_API_KEY
 
 # Build the application
-RUN npm run build
+RUN npm run build:ssg
 
 # Production Stage
 FROM nginx:alpine
 
 # Copy the build output from the previous stage
-COPY --from=build /app/dist /usr/share/nginx/html
+COPY --from=build /app/dist/client /usr/share/nginx/html
 
 # Copy custom Nginx configuration
 COPY nginx.conf /etc/nginx/conf.d/default.conf
