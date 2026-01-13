@@ -36,7 +36,7 @@ const Hero: React.FC = () => {
     }
   };
 
-  const currentImgSrc = imgState === 0 ? "assets/farhan-khan.jpeg" : "assets/farhan-khan.jpg";
+  const currentImgSrc = imgState === 0 ? "/assets/farhan-khan.jpeg" : "/assets/farhan-khan.jpg";
 
   return (
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden pt-20">
@@ -186,7 +186,7 @@ const Hero: React.FC = () => {
               Contact Me
             </a>
             <a
-              href="assets/farhan-khan-resume.pdf"
+              href="/assets/farhan-khan-resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="px-10 py-5 glass text-white rounded-2xl font-bold transition-all hover:bg-white/10 border border-white/10 flex items-center gap-2"
