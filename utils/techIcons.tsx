@@ -8,7 +8,7 @@ export const getTechIconUrl = (techName: string): string => {
     'Laravel': 'laravel',
     'Spring Boot': 'springboot',
     'Spring': 'spring',
-    'AWS': 'amazonaws',
+    'AWS': 'amazonwebservices',
     'Flutter': 'flutter',
     'PostgreSQL': 'postgresql',
     'MySQL': 'mysql',
@@ -21,7 +21,7 @@ export const getTechIconUrl = (techName: string): string => {
     'RabbitMQ': 'rabbitmq',
     'Python': 'python',
     'Go': 'go',
-    'Java': 'java',
+    'Java': 'oracle',
     'JavaScript': 'javascript',
     'React': 'react',
     'Vue': 'vuedotjs',
@@ -53,11 +53,11 @@ export const getTechIconUrl = (techName: string): string => {
     .trim();
 
   const iconName = techMap[normalizedName] || techMap[techName];
-  
+
   if (!iconName) {
     return ''; // Return empty string to trigger fallback
   }
-  
+
   // Use Simple Icons CDN
   return `https://cdn.simpleicons.org/${iconName}/818cf8`;
 };
@@ -66,13 +66,17 @@ export const getTechIconUrl = (techName: string): string => {
 export const TechIcon: React.FC<{ techName: string; className?: string }> = ({ techName, className = "w-4 h-4" }) => {
   const [useFallback, setUseFallback] = useState(false);
   const iconUrl = getTechIconUrl(techName);
-  
-  if (!iconUrl || useFallback) {
-    return <i className="fa-solid fa-screwdriver-wrench text-gray-400" style={{ fontSize: className.includes('w-4') ? '0.875rem' : '1rem' }}></i>;
+
+  if (!iconUrl || useFallback || !techName) {
+    return (
+      <span className="flex items-center justify-center bg-gray-800/50 rounded-md" style={{ width: className.includes('w-4') ? '1rem' : '1.25rem', height: className.includes('w-4') ? '1rem' : '1.25rem' }}>
+        <i className="fa-solid fa-screwdriver-wrench text-gray-400" style={{ fontSize: '0.6rem' }}></i>
+      </span>
+    );
   }
-  
+
   return (
-    <img 
+    <img
       src={iconUrl}
       alt={techName}
       className={className}
