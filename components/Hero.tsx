@@ -5,7 +5,7 @@ import { TechIcon } from '../utils/techIcons';
 import { TECH_STACK } from '../constants';
 
 const Hero: React.FC = () => {
-  const firstName = "1FARHAN";
+  const firstName = "FARHAN";
   const lastName = "KHAN";
 
   // 0: trying webp, 1: trying jpg
