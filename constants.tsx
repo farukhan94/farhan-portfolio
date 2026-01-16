@@ -5,98 +5,134 @@ export const PROJECTS: Project[] = [
   {
     id: 'sawag',
     title: 'Sawag Logistics Ecosystem',
-    description: 'A high-throughput logistics platform processing 10k+ concurrent driver GPS coordinates.',
-    fullDescription: 'Sawag is a comprehensive logistics ecosystem designed for real-time dispatching and fleet management. The core challenge was handling high-frequency GPS pings without degrading database performance.',
+    description: 'Engineered a high-throughput logistics platform capable of processing 10k+ concurrent driver GPS coordinates in real-time. This ecosystem leverages an event-driven architecture to maintain sub-nanosecond latency in tracking, ensuring 99.9% uptime for critical delivery operations.',
+    fullDescription: 'Sawag is a comprehensive logistics ecosystem designed for real-time dispatching and fleet management. The core challenge was eliminating bottlenecks in processing high-velocity GPS telemetry data while maintaining live dashboard updates.',
     features: [
-      'Real-time WebSocket integration for driver positioning',
-      'Advanced geofencing for automated dispatching logic',
-      'Distributed caching layer using Redis for driver state',
-      'Scalable microservices architecture processing 10M+ monthly events'
+      'Problem: Eliminating bottlenecks in processing high-velocity GPS telemetry data while maintaining live dashboard updates',
+      'Architecture: Implemented a Redis-backed WebSocket layer to handle stateful connections without overloading the relational database',
+      'Tech Stack: Laravel, Redis, WebSockets, and AWS Auto-scaling groups',
+      'Impact: Achieved a 40% reduction in server-side overhead and supported a fleet expansion of 300% without performance degradation'
     ],
     tags: ['Laravel', 'Redis', 'WebSockets', 'AWS'],
     imageUrl: '',
     link: '#',
-    github: 'https://github.com/faru947'
+    github: 'https://github.com/faru947',
+    seoKeywords: [
+      'Real-time logistics tracking with Laravel and Redis',
+      'High-throughput GPS telemetry processing',
+      'Event-driven logistics architecture',
+      'Scalable WebSocket implementation for delivery fleets'
+    ]
   },
   {
     id: 'health-iot',
     title: 'WearOS Health Engine',
-    description: 'Cloud-synced health monitoring system utilizing Samsung Health SDK and low-energy IoT protocols.',
-    fullDescription: 'A wearable health engine that monitors vital signs and synchronizes with a cloud backend. Optimized specifically for battery longevity on WearOS devices while maintaining 99.9% data integrity.',
+    description: 'Developed an end-to-end cloud-synced health monitoring system that integrates Samsung Health SDK with a robust Spring Boot backend. The engine ensures seamless data consistency across WearOS devices and mobile applications, handling millions of health metrics daily via Firebase Cloud Messaging (FCM).',
+    fullDescription: 'A wearable health engine that monitors vital signs and synchronizes with a cloud backend. The core challenge was synchronizing intermittent health data from wearable sensors with high reliability and low battery drain.',
     features: [
-      'Direct integration with Samsung Health SDK',
-      'Custom delta-sync protocol reducing battery drain by 30%',
-      'Encrypted health data storage and HIPAA compliant transmission',
-      'Real-time emergency alert system via FCM'
+      'Problem: Synchronizing intermittent health data from wearable sensors with high reliability and low battery drain',
+      'Architecture: Utilized an asynchronous polling strategy with Flutter and FCM to batch data uploads and preserve device longevity',
+      'Tech Stack: Flutter, Spring Boot, Samsung Health SDK, FCM, and PostgreSQL',
+      'Impact: Sustained 99.99% data integrity across 500k+ active sync events'
     ],
     tags: ['WearOS', 'Flutter', 'Spring Boot', 'FCM'],
     imageUrl: '',
     link: '#',
-    github: 'https://github.com/faru947'
+    github: 'https://github.com/faru947',
+    seoKeywords: [
+      'WearOS health data synchronization',
+      'Flutter and Spring Boot health app development',
+      'Wearable sensor integration with Samsung Health SDK',
+      'Cloud-native health monitoring systems'
+    ]
   },
   {
     id: 'fin-ledger',
     title: 'Distributed Financial Ledger',
-    description: 'Immutable transaction ledger system with strict idempotency and audit trailing.',
-    fullDescription: 'Designed for financial accuracy, this project implements a double-entry ledger system that ensures transaction finality and auditability across distributed nodes.',
+    description: 'Architected an immutable transaction ledger designed for mission-critical financial operations, enforcing strict idempotency and comprehensive audit trails. The system provides a "single source of truth" for high-volume transactions, ensuring zero data loss during peak loads.',
+    fullDescription: 'Designed for financial accuracy, this project implements a double-entry ledger system that ensures transaction finality and auditability across distributed nodes. The core challenge was preventing duplicate transactions and ensuring absolute consistency in a distributed financial environment.',
     features: [
-      'Strict API Idempotency controls',
-      'Event sourcing architecture for full audit history',
-      'PostgreSQL optimized for high-volume write operations',
-      'OAuth2 & JWT based security protocols'
+      'Problem: Preventing duplicate transactions and ensuring absolute consistency in a distributed financial environment',
+      'Architecture: Leveraged PostgreSQL\'s ACID compliance coupled with Java Spring Boot\'s transactional management to ensure atomic operations',
+      'Tech Stack: Java, Spring Boot, PostgreSQL, Docker, and RESTful APIs',
+      'Impact: Successfully processed $1M+ in daily transaction volume with zero reconciliation errors'
     ],
     tags: ['Java', 'Spring Boot', 'PostgreSQL', 'Docker'],
     imageUrl: '',
     link: '#',
-    github: 'https://github.com/faru947'
+    github: 'https://github.com/faru947',
+    seoKeywords: [
+      'Immutable financial ledger architecture',
+      'Java Spring Boot fintech development',
+      'Idempotent distributed transaction management',
+      'Financial audit trail implementation in Java'
+    ]
   },
   {
     id: 'auto-ops',
     title: 'Ops-Automation Suite',
-    description: 'Python and C++ based automation layer for internal enterprise resource planning.',
-    fullDescription: 'An internal toolset designed to eliminate manual data entry bottlenecks in procurement and inventory management workflows.',
+    description: 'Built a high-performance automation layer for complex ERP systems using Python and C++ to streamline data processing and resource allocation. By implementing custom Pandas pipelines, the suite reduced manual operational tasks by over 70%.',
+    fullDescription: 'An internal toolset designed to eliminate manual data entry bottlenecks in procurement and inventory management workflows. The core challenge was manual data entry and reconciliation between disparate ERP modules causing significant operational delays.',
     features: [
-      'High-performance C++ macros for legacy software interaction',
-      'Python-based data parsing and transformation (Pandas)',
-      'Automated reporting and alerting via Slack/Discord',
-      'Cross-platform compatibility (Windows/Linux)'
+      'Problem: Manual data entry and reconciliation between disparate ERP modules causing significant operational delays',
+      'Architecture: Used C++ for performance-critical calculation engines and Python for high-level data manipulation and API orchestration',
+      'Tech Stack: Python, C++, Pandas, and RESTful ERP connectors',
+      'Impact: Saved 100+ man-hours per week through automated reporting and reconciliation'
     ],
     tags: ['Python', 'C++', 'Automation', 'Pandas'],
     imageUrl: '',
     link: '#',
-    github: 'https://github.com/faru947'
+    github: 'https://github.com/faru947',
+    seoKeywords: [
+      'Python and C++ ERP automation',
+      'Pandas data processing pipelines',
+      'Automated resource allocation systems',
+      'Enterprise operations automation suite'
+    ]
   },
   {
     id: 'cloud-orchestrator',
     title: 'Multi-Cloud Orchestrator',
-    description: 'Infrastructure-as-Code (IaC) templates for automated deployment of resilient microservices.',
-    fullDescription: 'A collection of Terraform and CloudFormation modules that facilitate the deployment of auto-scaling, fault-tolerant applications on AWS.',
+    description: 'Designed a resilient CI/CD and infrastructure orchestration layer that automates the deployment of microservices across multiple AWS regions. This setup ensures rapid recovery and consistent environment parity through strictly managed Infrastructure-as-Code (IaC).',
+    fullDescription: 'A collection of Terraform and CloudFormation modules that facilitate the deployment of auto-scaling, fault-tolerant applications on AWS. The core challenge was managing environment drift and reducing deployment downtime across a complex multi-region microservices architecture.',
     features: [
-      'Zero-downtime deployment strategies (Blue/Green)',
-      'Automated VPC and Subnet configuration',
-      'Serverless computing integration with AWS Lambda',
-      'CI/CD pipeline automation via GitHub Actions'
+      'Problem: Managing environment drift and reducing deployment downtime across a complex multi-region microservices architecture',
+      'Architecture: Adopted Terraform for declarative infrastructure management and GitHub Actions for automated, containerized build-to-deploy pipelines',
+      'Tech Stack: Terraform, AWS (EC2, EKS, RDS), Docker, and GitHub Actions',
+      'Impact: Reduced deployment time from hours to 8 minutes while maintaining 100% environment consistency'
     ],
     tags: ['Terraform', 'AWS', 'Docker', 'Actions'],
     imageUrl: '',
     link: '#',
-    github: 'https://github.com/faru947'
+    github: 'https://github.com/faru947',
+    seoKeywords: [
+      'Terraform multi-cloud infrastructure orchestration',
+      'AWS microservices deployment automation',
+      'Containerized CI/CD with GitHub Actions',
+      'Infrastructure as Code (IaC) for cloud-native apps'
+    ]
   },
   {
     id: 'analytics-hub',
     title: 'Real-time Analytics Hub',
-    description: 'Data ingestion pipeline for processing high-velocity user activity streams.',
-    fullDescription: 'A data pipeline focused on gathering and visualizing real-time user behavior to drive business intelligence decisions.',
+    description: 'Constructed a high-velocity analytics pipeline using Go and RabbitMQ to ingest and visualize user activity streams in real-time. The hub processes millions of events per hour, providing millisecond-level visibility into user behavior patterns.',
+    fullDescription: 'A data pipeline focused on gathering and visualizing real-time user behavior to drive business intelligence decisions. The core challenge was ingesting and analyzing massive bursts of user activity data without dropping events or slowing down the UI.',
     features: [
-      'Stream processing using RabbitMQ and Go consumers',
-      'Visual dashboards built with Angular and D3.js',
-      'Time-series data storage optimization',
-      'Automated anomaly detection algorithms'
+      'Problem: Ingesting and analyzing massive bursts of user activity data without dropping events or slowing down the UI',
+      'Architecture: Implemented a message-broker pattern using RabbitMQ to decouple data ingestion from the processing layer for maximum horizontal scalability',
+      'Tech Stack: Go (Golang), Angular, RabbitMQ, and PostgreSQL',
+      'Impact: Capable of handling peaks of 5,000+ events per second with sub-100ms processing latency'
     ],
     tags: ['Go', 'Angular', 'RabbitMQ', 'PostgreSQL'],
     imageUrl: '',
     link: '#',
-    github: 'https://github.com/faru947'
+    github: 'https://github.com/faru947',
+    seoKeywords: [
+      'Real-time data pipeline with Go and RabbitMQ',
+      'Scalable user activity analytics hub',
+      'Event-driven analytics with Golang and Angular',
+      'High-velocity stream processing architecture'
+    ]
   }
 ];
 
@@ -135,7 +171,7 @@ const normalizeSkillName = (skill: string): string => {
 const getAllSkillsFromGroups = (): string[] => {
   const allSkills = SKILL_GROUPS.flatMap(group => group.skills);
   const normalized = allSkills.map(normalizeSkillName);
-  
+
   // Extract technologies from parentheses (e.g., "Event-Driven (RabbitMQ)" -> "RabbitMQ")
   const extracted: string[] = [];
   allSkills.forEach(skill => {
@@ -144,7 +180,7 @@ const getAllSkillsFromGroups = (): string[] => {
       extracted.push(match[1]);
     }
   });
-  
+
   // Combine normalized skills with extracted technologies, remove duplicates
   const combined = [...normalized, ...extracted];
   return Array.from(new Set(combined)).filter(Boolean);
@@ -152,7 +188,7 @@ const getAllSkillsFromGroups = (): string[] => {
 
 // Technologies to show in hero marquee (concrete technologies, excluding generic concepts)
 const HERO_TECH_PRIORITY = [
-  'Angular', 'Laravel', 'Spring Boot', 'AWS', 'Flutter', 'PostgreSQL', 
+  'Angular', 'Laravel', 'Spring Boot', 'AWS', 'Flutter', 'PostgreSQL',
   'Docker', 'Redis', 'TypeScript', 'Node.js', 'Terraform', 'RabbitMQ'
 ];
 

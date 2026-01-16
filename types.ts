@@ -9,6 +9,7 @@ export interface Project {
   imageUrl: string;
   link: string;
   github: string;
+  seoKeywords?: string[];
 }
 
 export interface Skill {

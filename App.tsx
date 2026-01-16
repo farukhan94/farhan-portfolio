@@ -12,8 +12,8 @@ const App: React.FC = () => {
   return (
     <div className="relative">
       <Navbar />
-      
-      <main>
+
+      <main id="main-content" role="main">
         <Hero />
         <Projects />
         <Skills />
@@ -21,7 +21,7 @@ const App: React.FC = () => {
         <Contact />
       </main>
 
-      <footer className="py-12 border-t border-white/5 text-center text-gray-500">
+      <footer role="contentinfo" className="py-12 border-t border-white/5 text-center text-gray-500">
         <div className="container mx-auto px-6">
           <p className="text-sm">
             &copy; {new Date().getFullYear()} Mohammad Farhan Khan. Senior Full Stack Engineer.
