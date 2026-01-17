@@ -16,7 +16,7 @@ const Projects: React.FC = () => {
       <div className="container mx-auto px-6">
         <ScrollReveal width="100%">
           <div className="mb-24">
-            <h2 id="projects-heading" className="text-4xl md:text-6xl font-black mb-6 uppercase tracking-tighter">
+            <h2 id="projects-heading" className="text-4xl md:text-6xl font-black mb-6 uppercase tracking-tighter section-header">
               Featured <span className="text-gradient">Engineering Work</span>
             </h2>
             <p className="text-gray-300 text-lg max-w-xl">
@@ -36,7 +36,7 @@ const Projects: React.FC = () => {
             >
               <div
                 onClick={() => setSelectedProject(project)}
-                className="group glass rounded-[3rem] p-10 border border-white/5 flex flex-col transition-all duration-500 hover:-translate-y-4 hover:border-indigo-500/40 min-h-[420px] cursor-pointer relative overflow-hidden h-full"
+                className="group glass rounded-[3rem] p-10 border border-white/5 flex flex-col transition-all duration-500 hover:-translate-y-4 hover:border-indigo-500/40 min-h-[420px] cursor-pointer relative overflow-hidden h-full glowing-border"
               >
                 {/* Subtle hover background effect */}
                 <div className="absolute inset-0 bg-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>

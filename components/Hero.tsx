@@ -92,7 +92,7 @@ const Hero: React.FC = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
-                className="text-6xl lg:text-8xl font-black tracking-tight leading-[0.9]"
+                className="text-6xl lg:text-8xl font-black tracking-tight leading-[0.9] section-header lg:text-left"
               >
                 <span className="block text-white mb-2">Mohammad</span>
                 <span className="text-gradient block lg:inline">Farhan Khan</span>
@@ -121,7 +121,7 @@ const Hero: React.FC = () => {
             >
               <a
                 href="#projects"
-                className="group relative px-8 py-4 bg-indigo-600 hover:bg-indigo-500 text-white rounded-2xl font-bold transition-all shadow-[0_10px_40px_-10px_rgba(99,102,241,0.5)] hover:shadow-[0_20px_40px_-10px_rgba(99,102,241,0.6)] flex items-center justify-center gap-3 overflow-hidden"
+                className="group relative px-8 py-4 bg-indigo-600 hover:bg-indigo-500 text-white rounded-2xl font-bold transition-all shadow-[0_10px_40px_-10px_rgba(99,102,241,0.5)] hover:shadow-[0_20px_40px_-10px_rgba(99,102,241,0.6)] flex items-center justify-center gap-3 overflow-hidden shimmer"
               >
                 <span className="relative z-10 flex items-center gap-2">
                   <i className="fa-solid fa-folder-open"></i> View Projects
@@ -132,9 +132,9 @@ const Hero: React.FC = () => {
                 href="/assets/farhan-khan-resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-4 glass border border-white/10 text-white rounded-2xl font-bold hover:bg-white/5 transition-all flex items-center justify-center gap-3 hover:border-white/20"
+                className="group px-8 py-4 glass border border-white/10 text-white rounded-2xl font-bold hover:bg-white/5 transition-all flex items-center justify-center gap-3 hover:border-white/20"
               >
-                <i className="fa-solid fa-file-pdf"></i>
+                <i className="fa-solid fa-file-pdf group-hover:scale-110 transition-transform"></i>
                 Download Resume
               </a>
             </motion.div>

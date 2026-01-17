@@ -14,7 +14,7 @@ const Skills: React.FC = () => {
       <div className="container mx-auto px-6">
         <ScrollReveal width="100%">
           <div className="text-center mb-24">
-            <h2 id="skills-heading" className="text-4xl md:text-6xl font-black mb-6 uppercase tracking-tighter">
+            <h2 id="skills-heading" className="text-4xl md:text-6xl font-black mb-6 uppercase tracking-tighter section-header">
               Technical <span className="text-gradient">Expertise</span>
             </h2>
             <p className="text-gray-300 text-xl max-w-2xl mx-auto">
@@ -31,7 +31,7 @@ const Skills: React.FC = () => {
               delay={shouldReduceMotion ? 0 : idx * 0.1}
               direction="up"
             >
-              <div className="glass p-8 md:p-10 rounded-[2.5rem] border border-white/5 flex flex-col hover:border-indigo-500/30 transition-all duration-500 group h-full hover:shadow-[0_10px_40px_-10px_rgba(99,102,241,0.1)]">
+              <div className="glass p-8 md:p-10 rounded-[2.5rem] border border-white/5 flex flex-col hover:border-indigo-500/30 transition-all duration-500 group h-full hover:shadow-[0_10px_40px_-10px_rgba(99,102,241,0.1)] glowing-border">
                 <h3 className="text-xl md:text-2xl font-black mb-8 text-white uppercase tracking-tight pb-5 border-b border-white/5 flex items-center gap-3">
                   <i className={`fa-solid ${group.icon} text-indigo-400`}></i>
                   {group.category}

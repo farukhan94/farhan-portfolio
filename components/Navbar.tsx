@@ -30,30 +30,30 @@ const Navbar: React.FC = () => {
     <nav
       role="navigation"
       aria-label="Main navigation"
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'glass py-4 shadow-lg' : 'bg-transparent py-6'
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${isScrolled ? 'glass py-3 shadow-2xl backdrop-blur-xl' : 'bg-transparent py-6'
         }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
-        <a href="#" className="text-xl md:text-2xl font-bold tracking-tighter text-white">
-          FARHAN<span className="text-indigo-500">.KHAN</span>
+        <a href="#" className="text-xl md:text-3xl font-black tracking-tighter text-white group">
+          FARHAN<span className="text-indigo-500 group-hover:text-pink-500 transition-colors duration-500">.KHAN</span>
         </a>
 
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-10">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="text-sm font-medium text-gray-300 hover:text-white transition-colors"
+              className="text-sm font-bold text-gray-400 hover:text-white transition-all hover:tracking-widest duration-300"
             >
-              {link.name}
+              {link.name.toUpperCase()}
             </a>
           ))}
           <a
             href="#contact"
-            className="px-6 py-2 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg font-medium transition-all"
+            className="px-6 py-2 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl font-bold transition-all hover:scale-105 shadow-lg shadow-indigo-600/20 active:scale-95 shimmer"
           >
-            Contact
+            SAY HELLO
           </a>
         </div>
 
