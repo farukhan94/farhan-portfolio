@@ -21,16 +21,25 @@ const App: React.FC = () => {
         <Contact />
       </main>
 
-      <footer role="contentinfo" className="py-12 border-t border-white/5 text-center text-gray-500">
-        <div className="container mx-auto px-6">
-          <p className="text-sm">
-            &copy; {new Date().getFullYear()} Mohammad Farhan Khan. Senior Full Stack Engineer.
-          </p>
-          <div className="mt-4 flex justify-center gap-6">
-            <a href="https://farhan.xyz" className="hover:text-white transition-colors">Portfolio</a>
-            <a href="https://github.com/faru947" className="hover:text-white transition-colors">GitHub</a>
-            <a href="https://www.linkedin.com/in/mohammad-farhan-99198419b" className="hover:text-white transition-colors">LinkedIn</a>
+      <footer role="contentinfo" className="py-20 border-t border-white/5 bg-black/20">
+        <div className="container mx-auto px-6 text-center">
+          <div className="text-2xl font-black mb-8 tracking-tighter text-white">
+            FARHAN<span className="text-indigo-500">.KHAN</span>
           </div>
+          <div className="flex flex-wrap justify-center gap-x-12 gap-y-4 mb-10">
+            {['hero', 'projects', 'skills', 'experience', 'contact'].map((item) => (
+              <a
+                key={item}
+                href={`#${item}`}
+                className="text-xs font-bold uppercase tracking-widest text-gray-500 hover:text-indigo-400 transition-colors"
+              >
+                {item}
+              </a>
+            ))}
+          </div>
+          <p className="text-[10px] uppercase tracking-[0.3em] text-gray-600 font-black">
+            &copy; {new Date().getFullYear()} Engineered with passion by Mohammad Farhan Khan
+          </p>
         </div>
       </footer>
 
