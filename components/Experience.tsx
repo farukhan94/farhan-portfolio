@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { EXPERIENCES } from '../constants';
 import { useDeviceDetection } from '../utils/useDeviceDetection';
+import { ScrollReveal } from './ui/ScrollReveal';
 
 // Helper function to determine role badge
 const getRoleBadge = (role: string) => {
@@ -40,16 +41,14 @@ const Experience: React.FC = () => {
   return (
     <section id="experience" aria-labelledby="experience-heading" className="py-32 bg-gray-900/30">
       <div className="container mx-auto px-6 max-w-5xl">
-        <motion.h2
-          id="experience-heading"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: shouldReduceMotion ? 0.3 : 0.6 }}
-          className="text-4xl md:text-6xl font-black mb-24 text-center uppercase tracking-tighter"
-        >
-          Professional <span className="text-gradient">Journey</span>
-        </motion.h2>
+        <ScrollReveal width="100%">
+          <h2
+            id="experience-heading"
+            className="text-4xl md:text-6xl font-black mb-24 text-center uppercase tracking-tighter"
+          >
+            Professional <span className="text-gradient">Journey</span>
+          </h2>
+        </ScrollReveal>
 
         <div className="relative">
           {/* Vertical line */}
@@ -63,12 +62,11 @@ const Experience: React.FC = () => {
               const hasMore = exp.description.length > 3;
 
               return (
-                <motion.div
+                <ScrollReveal
                   key={idx}
-                  initial={{ opacity: 0, x: shouldReduceMotion ? 0 : (idx % 2 === 0 ? 50 : -50) }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  transition={{ duration: shouldReduceMotion ? 0.3 : 0.6 }}
+                  width="100%"
+                  direction={idx % 2 === 0 ? 'right' : 'left'}
+                  delay={0.2}
                   className={`relative flex items-center justify-between ${idx % 2 === 0 ? 'md:flex-row-reverse' : ''} flex-col md:flex-row pl-8 md:pl-0`}
                 >
                   <div className="md:w-[45%]"></div>
@@ -77,7 +75,7 @@ const Experience: React.FC = () => {
                   <div className="absolute left-0 md:left-1/2 top-0 md:top-1/2 w-6 h-6 rounded-full bg-indigo-500 border-4 border-[#030712] -ml-3 md:-mt-3 z-10 shadow-[0_0_20px_rgba(99,102,241,0.6)]"></div>
 
                   <div className="md:w-[45%] w-full">
-                    <div className="glass p-10 rounded-[2.5rem] border border-white/5 transition-all hover:border-indigo-500/20 group">
+                    <div className="glass p-10 rounded-[2.5rem] border border-white/5 transition-all hover:border-indigo-500/20 group hover:shadow-[0_10px_40px_-10px_rgba(99,102,241,0.1)]">
                       {/* Role Badge + Period */}
                       <div className="flex flex-wrap items-center gap-3 mb-4">
                         <span className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold border ${badge.color}`}>
@@ -120,7 +118,7 @@ const Experience: React.FC = () => {
                       )}
                     </div>
                   </div>
-                </motion.div>
+                </ScrollReveal>
               );
             })}
           </div>

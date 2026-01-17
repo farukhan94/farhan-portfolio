@@ -5,6 +5,7 @@ import { PROJECTS } from '../constants';
 import { Project } from '../types';
 import { TechIcon } from '../utils/techIcons';
 import { useDeviceDetection } from '../utils/useDeviceDetection';
+import { ScrollReveal } from './ui/ScrollReveal';
 
 const Projects: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
@@ -13,57 +14,56 @@ const Projects: React.FC = () => {
   return (
     <section id="projects" aria-labelledby="projects-heading" className="pt-16 md:pt-32 pb-32">
       <div className="container mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, x: shouldReduceMotion ? 0 : -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: shouldReduceMotion ? 0.3 : 0.6 }}
-          className="mb-24"
-        >
-          <h2 id="projects-heading" className="text-4xl md:text-6xl font-black mb-6 uppercase tracking-tighter">
-            Featured <span className="text-gradient">Engineering Work</span>
-          </h2>
-          <p className="text-gray-300 text-lg max-w-xl">
-            A selection of high-performance solutions engineered for complexity and scale. Click on any card for technical deep-dives.
-          </p>
-        </motion.div>
+        <ScrollReveal width="100%">
+          <div className="mb-24">
+            <h2 id="projects-heading" className="text-4xl md:text-6xl font-black mb-6 uppercase tracking-tighter">
+              Featured <span className="text-gradient">Engineering Work</span>
+            </h2>
+            <p className="text-gray-300 text-lg max-w-xl">
+              A selection of high-performance solutions engineered for complexity and scale. Click on any card for technical deep-dives.
+            </p>
+          </div>
+        </ScrollReveal>
 
         <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-10">
           {PROJECTS.map((project, idx) => (
-            <motion.div
+            <ScrollReveal
               key={project.id}
-              initial={{ opacity: 0, y: shouldReduceMotion ? 0 : (isMobile ? 10 : 30) }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ delay: shouldReduceMotion ? 0 : idx * 0.1, duration: shouldReduceMotion ? 0.3 : 0.5 }}
-              onClick={() => setSelectedProject(project)}
-              className="group glass rounded-[3rem] p-10 border border-white/5 flex flex-col transition-all duration-500 hover:-translate-y-4 hover:border-indigo-500/40 min-h-[420px] cursor-pointer relative overflow-hidden"
+              width="100%"
+              delay={shouldReduceMotion ? 0 : idx * 0.1}
+              direction="up"
+              className="h-full"
             >
-              {/* Subtle hover background effect */}
-              <div className="absolute inset-0 bg-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div
+                onClick={() => setSelectedProject(project)}
+                className="group glass rounded-[3rem] p-10 border border-white/5 flex flex-col transition-all duration-500 hover:-translate-y-4 hover:border-indigo-500/40 min-h-[420px] cursor-pointer relative overflow-hidden h-full"
+              >
+                {/* Subtle hover background effect */}
+                <div className="absolute inset-0 bg-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
 
-              <div className="relative z-10 flex flex-col h-full">
-                <h3 className="text-3xl font-black mb-6 group-hover:text-indigo-400 transition-colors uppercase tracking-tight leading-tight">
-                  {project.title}
-                </h3>
-                <p className="text-gray-300 mb-6 leading-relaxed font-medium flex-grow">
-                  {project.description}
-                </p>
+                <div className="relative z-10 flex flex-col h-full">
+                  <h3 className="text-3xl font-black mb-6 group-hover:text-indigo-400 transition-colors uppercase tracking-tight leading-tight">
+                    {project.title}
+                  </h3>
+                  <p className="text-gray-300 mb-6 leading-relaxed font-medium flex-grow">
+                    {project.description}
+                  </p>
 
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.tags.map(tag => (
-                    <span key={tag} className="px-3 py-1.5 bg-white/10 backdrop-blur-md rounded-lg text-[10px] font-black uppercase tracking-widest text-indigo-300 border border-white/10 flex items-center gap-1.5">
-                      <TechIcon techName={tag} className="w-3 h-3 flex-shrink-0" />
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {project.tags.map(tag => (
+                      <span key={tag} className="px-3 py-1.5 bg-white/10 backdrop-blur-md rounded-lg text-[10px] font-black uppercase tracking-widest text-indigo-300 border border-white/10 flex items-center gap-1.5">
+                        <TechIcon techName={tag} className="w-3 h-3 flex-shrink-0" />
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
 
-                <div className="mt-auto flex items-center text-xs font-black uppercase tracking-[0.2em] text-gray-400 group-hover:text-indigo-300 transition-colors">
-                  View Details <i className="fa-solid fa-arrow-right ml-2"></i>
+                  <div className="mt-auto flex items-center text-xs font-black uppercase tracking-[0.2em] text-gray-400 group-hover:text-indigo-300 transition-colors">
+                    View Details <i className="fa-solid fa-arrow-right ml-2"></i>
+                  </div>
                 </div>
               </div>
-            </motion.div>
+            </ScrollReveal>
           ))}
         </div>
       </div>
